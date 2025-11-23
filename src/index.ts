@@ -14,9 +14,16 @@ connectDB();
 
 // Middlewares
 app.use(cors({
-  origin: [getEnvVariable('FRONT_END_URL')],
+  origin: [
+    getEnvVariable("FRONT_END_URL"),
+    "https://news-mw5j.onrender.com",   // Render backend
+    "http://localhost:5173"             // Local frontend (optional)
+  ],
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
   credentials: true,
 }));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
