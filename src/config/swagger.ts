@@ -12,16 +12,17 @@ const options = {
       version: "1.0.0",
       description: "API documentation for fetching news using NewsAPI.org",
     },
-    servers: [
-      {
-        url: "http://localhost:5000",
-        description: "Local server",
-      },
-      {
-        url: RENDER_URL,
-        description: "Render Production Server",
-      },
-    ],
+servers: [
+  {
+    url: "https://news-mw5j.onrender.com",
+    description: "Production server (Render)",
+  },
+  {
+    url: "http://localhost:5000",
+    description: "Local server",
+  },
+],
+
   },
   apis: ["./src/routes/*.ts"],
 };
